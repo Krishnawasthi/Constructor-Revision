@@ -57,3 +57,72 @@ If you don't explicitly write super(), the Java compiler automatically inserts a
 •	In a Singleton pattern, the constructor is deliberately made private to stop external classes from creating new instances.
 •	A controlled global point of access (usually a public static method like getInstance()) manages the creation and delivery of a single, shared instance.
 
+
+
+
+
+
+🏫 Class Work
+Task: Create a Company class with a constructor that initializes the company name. Create an Employee class that inherits from Company and uses super() to initialize the company name and also stores employee details.
+
+Java
+// Parent Class
+class Company {
+    String companyName;
+
+    // Constructor to initialize company name
+    public Company(String companyName) {
+        this.companyName = companyName;
+    }
+}
+
+// Child Class
+class Employee extends Company {
+    String employeeName;
+    int employeeId;
+
+    // Constructor using super() to invoke parent initialization
+    public Employee(String companyName, String employeeName, int employeeId) {
+        super(companyName); // Must be the first line!
+        this.employeeName = employeeName;
+        this.employeeId = employeeId;
+    }
+
+    public void displayDetails() {
+        System.out.println("🏢 Company: " + companyName);
+        System.out.println("👤 Employee: " + employeeName + " (ID: " + employeeId + ")");
+    }
+}
+🏠 Home Work
+Task: Create a Bank class with a constructor that initializes the bank name. Create a Customer class that inherits from Bank and uses super() to pass the bank name while adding customer details.
+
+Java
+// Parent Class
+class Bank {
+    String bankName;
+
+    // Constructor to initialize bank name
+    public Bank(String bankName) {
+        this.bankName = bankName;
+    }
+}
+
+// Child Class
+class Customer extends Bank {
+    String customerName;
+    String accountNumber;
+
+    // Constructor using super() to pass the bank name forward
+    public Customer(String bankName, String customerName, String accountNumber) {
+        super(bankName);
+        this.customerName = customerName;
+        this.accountNumber = accountNumber;
+    }
+
+    public void showAccountInfo() {
+        System.out.println("🏦 Bank Name      : " + bankName);
+        System.out.println("🙋‍♂️ Customer Name  : " + customerName);
+        System.out.println("💳 Account Number : " + accountNumber);
+    }
+}
+
