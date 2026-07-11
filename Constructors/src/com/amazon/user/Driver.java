@@ -1,0 +1,13 @@
+package com.amazon.user;
+
+public class Driver {
+
+	public static void main(String[] args) {
+		
+		System.out.println("Driver......main(1)");
+	  
+		User u1 = new User("ktishna242");
+
+	}
+
+}
